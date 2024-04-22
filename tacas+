@@ -1,0 +1,19 @@
+in vlan 1
+ip add 192.168.0.1 255.255.255.0
+no shut
+ex
+
+aaa new-model
+username abc password 123
+aaa authentication login default group tacacs+
+aaa authentication login default group tacacs+ local
+tacas-server host 192.168.0.1 key xyz (for server)
+
+#telent
+line vty 0 4
+login auth defaut
+exit
+
+aaa authorization exec default group tacacs+
+aaa authorization exec default group tacacs+ local
+
