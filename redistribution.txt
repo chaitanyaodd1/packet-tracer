@@ -1,0 +1,8 @@
+OSPF AND EIGRP
+Router(config)#router ospf 2
+Router(config-router)#redistribute eigrp 1 subnets
+Router(config-router)#exit
+
+
+Router(config)#router eigrp 1
+Router(config-router)#redistribute ospf 2 metric 128 20000 255 255 1500

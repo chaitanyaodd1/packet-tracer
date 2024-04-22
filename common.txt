@@ -1,0 +1,2 @@
+#show ip interface brief
+#show interface se0/0/0
